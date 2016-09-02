@@ -1,0 +1,16 @@
+<div class="createevent">
+    <p> Create a new event below:</p>
+    <br>  </br>
+    <form method="POST" action="/users/"+userid+"/events">
+    Name the event : <input type="text" name="title" value={{title}}><br>
+    <br> </br>
+    Set Date &amp; Time of event: <input type="datetime-local" name="datetime" value={{dtime}}>
+    <br> </br>
+    Describe what you fear about the event: <input type="text" name="preeventtxt" value={{preeventtxt}}>
+    <br> </br>
+    Rate your fear out of 10: <input type="number" min="0" max="10" step="1" name="prefearfactor" value={{prefearfactor}}>
+    <br> </br>
+    <input type="submit" name="Submit">
+    <br><font color='red'> {{error}}</font> </br>
+    </form>
+</div>

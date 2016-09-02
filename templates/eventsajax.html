@@ -1,0 +1,78 @@
+<!--###########################################################################
+#
+#   File Name         Date          Owner            Description
+#   <-->            <!---->      <!---->              <!---->
+<!--#   eventsajax.html  11/19/15  Archana Bahuguna  Rendered html for events tabs
+#
+//###########################################################################-->
+<div class="blog blog-category blog-archive container">
+    <div class="blog-list blog-category-list">
+        <div class="row">
+            {% for event in thispage %}
+            <article class="post col-md-12">
+                <div class="post-inner">
+                    <div class="date-label">
+                        <span class="month">{{((event.datetime).strftime("%B"))[0:3]}}  {{(event.datetime).year}}</span>
+                        <span class="date-number">{{(event.datetime).day}}</span>
+                    </div>
+                    <h3 class="post-title"><a href="blog-single.html">{{event.title}}</a></h3>
+                </div><!--//post-inner-->
+            
+                <div class="post-inner col-md-6">
+                    <h4 class="post-title-thoughts-p"><a href="blog-single.html">Imagined thoughts</a></h4>
+                    <div class="meta">
+                        <ul class="meta-list list-inline">
+                            <li class="rated-factor">
+                                <a href="#" title="Fear rating out of 10">
+                                <i class="fa fa-2x fa-{% if event.prefearfactor<5 %}smile{% else %}frown{% endif %}-o"></i>{{event.prefearfactor}}</a>
+                            </li>
+                        </ul><!--//meta-list-->
+                    </div><!--meta-->
+                <div class="post-entry"><p>{{event.preeventtxt}}</p></div>
+                </div><!--//post-inner-->
+                
+                <div class="post-inner col-md-6">
+                    <h4 class="post-title-thoughts-a"><a href="blog-single.html">Actual thoughts</a></h4>
+                    <div class="meta">
+                        <ul class="meta-list list-inline">
+                            <li class="rated-factor">
+                                {% if not futureevents %}
+                                <a href="#" title="Fear rating out of 10">
+                                <i class="fa fa-2x fa-{% if event.postfearfactor<5 %}smile{% else %}frown{% endif %}-o"></i>{{event.postfearfactor}}</a>
+                                {% endif %}
+                            </li>
+                        </ul><!--//meta-list-->
+                    </div><!--meta-->
+                    <div class="post-entry"> 
+                        {% if not futureevents %}
+                        <p>{{event.posteventtxt}}</p>
+                        {% endif %}
+                    </div>
+                </div><!--//post-inner-->
+                {% if futureevents %}
+                    <form method="GET" action="/events/{{event.eventid}}">
+                       <div align="right"><input type="submit" name="submit" value="Update"></div>
+                    </form>
+                {% endif %}
+            </article><!--//post-->
+            {% endfor %}
+        </div><!--//row-->
+    </div><!--//blog-list-->
+            
+    <div class="pagination-container text-center">
+    
+      <ul class="pagination {% if futureevents %} fut {% else %} up {% endif %}">
+        <li><a data-pagenum="1" name="pagenum-1">&laquo;</a></li>
+          {% for i in range(1,totalpages+1) %}
+            {% if (i==pageid) %}
+               <li class="active"><a name="currentpage">{{i}}<span class="sr-only">current</span></a></li>
+            {% else %}
+               <li><a data-pagenum="{{i}}" name="pagenum-{{i}}" >{{i}}</a></li>
+            {% endif %}
+          {% endfor %}
+        <li><a data-pagenum="{{totalpages}}" name="pagenum-{{totalpages}}" >&raquo;</a></li>
+      </ul><!--//pagination-->    
+        
+    </div><!--//pagination-container-->
+
+</div><!--//blog-->

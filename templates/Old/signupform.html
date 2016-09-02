@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1> Welcome to the abc. </h1>
+    <br> </br>
+    <br> </br>
+    <p> Please signup below: </p>
+    <br> </br>
+    <br> </br>
+    <form method="POST" action="/forms/signup">
+    username: <input type="text" name="username" value={{username}}><br>
+    <br> </br>
+    password: <input type="password" name="password1" value={{password1}}>
+    <br> </br>
+    password: <input type="password" name="password2" value={{password2}}>
+    <br> </br>
+    Firstname: <input type="text" name="firstname" value={{firstname}}>
+    <br> </br>
+    Lastname: <input type="text" name="lastname" value={{lastname}}>
+    <br> </br>
+    Phone: <input type="tel" name="phone" value={{phone}}>
+    <br> </br>
+    Email: <input type="email" name="email" value={{email}}>
+    <br> </br>
+    <input type="submit" name="signup">
+    <br> <font color='red'>{{error}}</font></br>
+    </form>
+</body>
+</html>

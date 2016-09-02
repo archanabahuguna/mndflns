@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Sati app for awareness</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/static/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/assets/plugins/flexslider/flexslider.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="/static/assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="features-page">
+
+    <!-- ******HEADER****** -->
+    <header id="header" class="header navbar-fixed-top">
+        <div class="container">
+            <h1 class="logo"><a href="/index.html"><span class="logo-icon"></span><span class="text">Sati</span></a></h1>
+            <nav class="main-nav" align="left">
+                <ul class="nav navbar-nav" align="left">
+                <!--ul class="nav nav-pills nav-justified text-center" role="tablist"-->
+                    <li class="active"><a  class-"scroll" href="#feature-1" role="tab" data-toggle="tab"><i class="fa fa-cloud-upload"></i> <span class="hidden-sm hidden-xs">My Stats &nbsp; &nbsp; </span></a></li>
+                    <li><a  class="scroll" href="#feature-2" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> <span class="hidden-sm hidden-xs">Events tab &nbsp; &nbsp; </span></a></li>
+                    <li><a  class="scroll" href="#feature-3" role="tab" data-toggle="tab"><i class="fa fa-users"></i> <span class="hidden-sm hidden-xs">Thought patterns &nbsp; &nbsp; </span></a></li>
+                    <li class="last"><a  class="scroll" href="#feature-4" role="tab" data-toggle="tab"><i class="fa fa-users"></i> <span class="hidden-sm hidden-xs">Wisdom of the world &nbsp; &nbsp; </span></a></li>
+                </ul>
+                <ul class="nav navbar-right">
+                    {% if not loggedin %}
+                        <li class="nav-item"><a href="/login.html">Log in</a></li>
+                        <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="/signup.html">Sign Up</a></li>
+                    {% else %}
+                         <div><script> var userid={{userid}};</script></div>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#" style="text-transform: lowercase">{{username}} <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu"><li><a href="/logout.html">logout</a></li></ul>
+                        </li><!--//dropdown-->
+                    {% endif %}
+                </ul><!--//nav-->
+            </nav><!--//main-nav-->
+        </div><!--//container-->
+    </header><!--//header-->
+
+
+    <!-- ******Features Section****** -->
+    <section class="features-tabbed section">
+        <div class="container">
+            <!--h2 class="title text-center">Dashboard</h2-->
+            <div class="row">
+
+                <div class="tab-content"><!--main tabs-->
+
+                    <div class="tab-pane fade in active" id="feature-1">
+                        <h3 class="title sr-only">My Stats</h3>
+                            <div class=" text-center col-md-12 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0">
+                                <ul class="nav nav-tabs text-center" role="tablist">
+                                    <li class="active"><a  class="scroll" href="#chart-1" role="tab" data-toggle="tab"><i class="fa fa-cloud-upload"></i><br /><span class="hidden-sm hidden-xs">Radial chart</span></a></li>
+                                    <li><a  class="scroll" href="#chart-2" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i><br /><span class="hidden-sm hidden-xs">Bar chart</span></a></li>
+                                </ul><!--//nav-tabs-->
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+
+                                    <div class="tab-pane fade in active" id="chart-1">
+
+                                        <h3 class="title sr-only">Radial</h3>
+                                            <div class="graph-result">
+                                            {% if olduser %}
+                                                <div style="text-align: left !important; z-index:0 !important; padding-bottom:10px" >{{raddivtag|safe}}</a></div>
+
+                                            {% else %}
+                                                <div><p>You have no data. Create an event</p></div>
+                                            <!--    <a href={{plot_url1}} target="_blank" title="Diff between Projected vs Real fear" style="display: block; text-align: center;"><img src={{plot_url1}}+".png" alt="Diff between Projected vs Actual"  onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                                <script data-plotly="abahuguna:{{plotno}}" src="https://plot.ly/embed.js" async></script>-->
+                                            {% endif %}
+                                            </div><!--graph result-->
+                                    </div><!--//tab-pane chart 1-->
+                                    <div class="tab-pane" id="chart-2">
+                                        <h3 class="title sr-only">Bar</h3>
+                                            <div class="graph-result">
+                                            {% if olduser %}
+                                            <div style="text-align: left !important; z-index:0 !important; padding-bottom:10px" >{{bardivtag|safe}}</a></div>
+                                            {% else %}
+                                            <div><p>You have no data. Create an event</p></div>
+                                            <!--<a href={{plot_url1}} target="_blank" title="Diff between Projected vs Real fear" style="display: block; text-align: center;"><img src={{plot_url1}}+".png" alt="Diff between Projected vs Actual"  onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                           <script data-plotly="abahuguna:{{plotno}}" src="https://plot.ly/embed.js" async></script>-->
+                                            {% endif %}
+                                            </div><!--graph result-->
+                                    </div><!--//tab-pane chart 2-->
+                                </div><!--//tab-content-->
+
+
+                            </div><!-- class=" text-center col-md-12 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0"-->
+                    </div><!--tab-pane feature-1-->
+
+
+                    <div class="tab-pane" id="feature-2">
+                        <h3 class="title sr-only">Events Tab</h3>
+                            <div id="navbar-collapse" class="navbar-collapse collapse">
+                                <ul class="nav nav-tabs" role="tablist" font-color="blue">
+                                    <li id="updatedevents" class="active"><a  class="scroll" href="#upevents" role="tab" data-toggle="tab">Review Past events</a></li>
+                                    <li id="futureevents"><a class="scroll" href="#futevents" role="tab" data-toggle="tab">Update Future events</a></li>
+                                    <li id="newevents"><a class="scroll" href="#events" role="tab" data-toggle="tab">Create New events</a></li>
+                                </ul><!--//nav-->
+                            </div><!--//navabr-collapse-->
+
+                            <div class="tab-content">
+
+                                <div class="tab-pane fade in active" id="upevents"></div> <!--class="tab-pane fade in active" id="updatedevents"-->
+
+                                <div class="tab-pane" id="futevents"></div> <!--future events-->
+
+
+                                <div class="tab-pane" id="events">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-0 col-md-3"></div>
+                                            <div class="col-sm-12 col-md-6 form-box-inner" align="center" style="border: 1px solid grey; padding-top:20px;">
+                                                <h2 class="title"><i>Create a new event below:</i></h2>
+                                                <form class="login-form" method="POST" action="/users/{{userid}}/events">
+                                                <label>Title or short description for event :</label>
+                                                <br><textarea name="title" cols=40 rows=1></textarea></br>
+                                                <br></br>
+                                                <label>Set Date &amp; Time: </label>
+                                                <br><input type="datetime-local" name="datetime" value={{dtime}}></br>
+                                                <br></br>
+                                                <label>Describe what you fear about the event: </label>
+                                                <br><textarea name="preeventtxt" cols=40 rows=6></textarea></br>
+                                                <br></br>
+                                                <label>Rate your fear out of 10: </label>
+                                                <br><input type="number" min="0" max="10" step="1" name="prefearfactor" value={{prefearfactor}} style="width:2px;"></br>
+                                                <br></br>
+                                                <input type="submit" name="Submit">
+                                                <br><font color='red'> {{error}}</font> </br>
+                                                </form>
+                                            </div>
+                                            <div class="col-sm-0 col-md-3"></div>
+                                        </div>
+                                    </div>
+                                </div> <!--class="tab-pane fade in active" id="events"-->
+
+                            </div> <!--class="tab-content"-->
+
+                        </div><!--//tab-pane feature-2-->
+
+
+                        <div class="tab-pane" id="feature-3">
+                            <h3 class="title sr-only">Thought patterns</h3>
+                            <figure class="figure text-center">
+                                <img class="img-responsive" src="/static/assets/images/features/fearwordcloud2.png" alt="" />
+                                <figcaption class="figure-caption">An observation of your thought patterns for all events so far</figcaption>
+                            </figure>
+                            <div class="desc text-left">
+                                <p>We might not be aware but most of our thoughts have patterns. We create loops of thoughts in our brain and are a slave of our old habit patterns of thinking. This feature helps us understand which words or phrases around our fearful thougghts repeat the most. It may help us observe how we think.</p>
+                            </div><!--//desc-->
+                        </div><!--//tab-pane-->
+
+                        <div class="tab-pane" id="feature-4">
+                            <h3 class="title sr-only">Wisdom of the world</h3>
+                            <figure class="figure text-center">
+                                <img class="img-responsive" src="/static/assets/images/features/screenshot-4.png" alt="" />
+                                <figcaption class="figure-caption">Recommended videos of what the world is thinking about this</figcaption>
+                            </figure>
+                            <div class="desc text-left">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue leo mauris, a fringilla nisi posuere tincidunt. Aliquam elementum lorem eget sollicitudin suscipit.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu</p>
+                                <p class="box">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id nulla at libero ultricies tempus. Duis porta justo quam, ut ultrices felis posuere sit amet. Sed imperdiet bibendum est, sit amet sagittis ante sagittis eu. Ut consequat volutpat sapien sed lobortis. Nullam laoreet vitae justo nec dignissim.
+                                </p>
+                            </div><!--//desc-->
+                        </div><!--//tab-pane-->
+
+                    </div><!--main tabs-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-tabbed-->
+
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+
+                <div class="row has-divider">
+                    <div class="footer-col download col-md-6 col-sm-12 col-xs-12">
+                        <div class="footer-col-inner">
+                            <h3 class="title">Mobile apps</h3>
+                            <ul class="list-unstyled download-list">
+                                <li><a class="btn btn-ghost" href="#"><i class="fa fa-apple"></i><span class="text">iOS coming soon...</span> </a></li>
+                                <li><a class="btn btn-ghost" href="#"><i class="fa fa-android"></i><span class="text">Android coming soon...</span></a></li>
+
+                            </ul>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//download-->
+                    <div class="footer-col contact col-md-6 col-sm-12 col-xs-12">
+                        <div class="footer-col-inner">
+                            <h3 class="title">Contact us</h3>
+                            <p class="adr clearfix">
+                                <i class="fa fa-map-marker pull-left"></i>
+                                <span class="adr-group pull-left">
+                                    <span class="street-address">College Green</span><br>
+                                    <span class="region">56 College Green Road</span><br>
+                                    <span class="postal-code">BS1 XR18</span><br>
+                                    <span class="country-name">UK</span>
+                                </span>
+                            </p>
+                            <p class="tel"><i class="fa fa-phone"></i>0800 123 4567</p>
+                            <p class="email"><i class="fa fa-envelope-o"></i><a href="#">support@satiapp.com</a></p>
+                            <a href="#" class="twitter-follow-button" data-show-count="false">Follow @SatiTweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//contact-->
+                </div>
+            </div><!--//container-->
+        </div><!--//footer-content-->
+        <div class="bottom-bar">
+            <div class="container">
+                <small class="copyright">Copyright@2015</small>
+            </div><!--//container-->
+        </div><!--//bottom-bar-->
+    </footer><!--//footer-->
+
+    <!-- *****CONFIGURE STYLE****** -->
+
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="/static/assets/plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/FitVids/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="/static/assets/js/main.js"></script>
+
+<!--Ajax calls-->
+    <script type="text/javascript" src="/static/ajaxupevts.js"></script>
+    <script type="text/javascript" src="/static/ajaxfutevts.js"></script>
+    <script type="text/javascript" src="/static/refreshscroll.js"></script>
+
+
+</body>
+</html>
+

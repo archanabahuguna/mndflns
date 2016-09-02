@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1> Welcome to your event page {{username }}</h1>
+    <br>  </br>
+    <p> Here is a list of events you have created in the past. Click on links below to view or update an event.</p>
+    <br>  </br>
+    <ul>
+    {% for j in events %}
+        <li> <a href="/events/{{j.eventid}}">Event-{{j.title }} </li>
+    {% endfor %}
+    </ul>
+    
+
+</body>
+</html>

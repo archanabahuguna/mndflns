@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Sati app for awareness</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/static/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/assets/plugins/flexslider/flexslider.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="/static/assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="blog-page blog-archive-page">
+    <!-- ******HEADER****** -->
+    <!--header id="header" class="header navbar-fixed-top"-->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="/index.html"><span class="logo-icon"></span><span class="text">Sati</span></a></h1>
+            <nav class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar" style="color: #0000ff;"></span>
+                        <span class="icon-bar" style="color: #0000ff;"></span>
+                        <span class="icon-bar" style="color: #0000ff;"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav nav-tabs">
+                       {% if not loggedin %}
+                          <li class="nav-item"><a href="/login.html">Log in</a></li>
+                          <li class="nav-item"><a href="/signup.html">Signup</a></li>
+                          
+                       {% else %}
+                          <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#" style="text-transform: lowercase">{{username}} <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu"><li><a href="/logout.html">logout</a></li></ul>
+                          </li>
+                       {% endif %}
+                    </ul><!--//nav-->
+
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div><!--//container-->
+    </header><!--//header-->
+
+    <div class="bg-slider-wrapper">
+        <div class="flexslider bg-slider">
+            <ul class="slides">
+                <li class="slide slide-1"></li>
+                <li class="slide slide-2"></li>
+                <li class="slide slide-3"></li>
+            </ul>
+        </div>
+    </div><!--//bg-slider-wrapper-->
+
+    <div class="sections-wrapper">
+
+        <!-- ******Why Section****** -->
+        <section id="why" class="section why">
+            <div class="container">
+                <h2 class="title text-center">Data visualization of thought patterns</h2>
+                <p class="intro text-center">Get a reality check</p>
+                <div class="row item">
+                    <div class="content col-md-4 col-sm-12 col-xs-12">
+                        <h3 class="title">How real are your fears?</h3>
+                        <div class="desc">
+                            <p>We all feel overwhelmed with negative emotions from time to time. Fear of the unknown or fear of future often takes a toll on us.
+                            But have we ever wondered how real our fears are? This app gives us an opportunity to journal our thoughts about an imagined future reality
+                            and compare it with the actual reality. That way we can understand and learn how to take our thoughts -NOT so seriously.</p>
+                        </div>
+                        <div class="quote">
+                            <div class="quote-profile">
+                                <img class="img-responsive img-circle" src="/static/assets/images/people/profile-s-1.png" alt="" />
+                            </div><!--//profile-->
+                            <div class="quote-content">
+                                <blockquote><p><a href="https://twitter.com/3rdwave_themes" target="_blank"></a> Love it! I can now see how my fears are not so real. I’ll definitely recommend it to my friends. :)</p></blockquote>
+                                <p class="source">@Juni, Delhi</p>
+                            </div><!--//quote-content-->
+                        </div><!--//quote-->
+                    </div><!--//content-->
+                    <figure class="figure col-md-7 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
+                        <img class="img-responsive" src="/static/assets/images/figures/mygraph-ab2.png" alt="" />
+
+                    </figure>
+                </div><!--//item-->
+
+                <div class="row item">
+                    <div class="content col-md-4 col-sm-12 col-xs-12 col-md-push-8 col-sm-push-0 col-xs-push-0">
+                        <h3 class="title">Graphically visualize your thought patterns</h3>
+                        <div class="desc">
+                            <p>This feature allows you to visualize your fearful thought patterns on a radial chart comparing real with imagined.</p>
+                        </div>
+
+                        <div class="quote">
+                            <div class="quote-profile">
+                                <img class="img-responsive img-circle" src="/static/assets/images/people/profile-v-1.png" alt="" />
+                            </div><!--//profile-->
+                            <div class="quote-content">
+                                <blockquote><p>I am loving it. It definitely increases my awareness around my thoughts.</p></blockquote>
+                                <p class="source">@Vida, Tuscany</p>
+                            </div><!--//quote-content-->
+                        </div><!--//quote-->
+                    </div><!--//content-->
+                    <figure class="figure col-md-7 col-sm-12 col-xs-12 col-md-pull-4 col-sm-pull-0 col-xs-pull-0">
+                        <img class="img-responsive" src="/static/assets/images/figures/radialpng.png" alt="" />
+                        <!--figcaption class="figure-caption">(Screenshot: Coral - App &amp; website startup kit) </figcaption-->
+                    </figure>
+                </div><!--//item-->
+
+                <div class="row item">
+                    <div class="content col-md-4 col-sm-12 col-xs-12 col-md-push-8 col-sm-push-0 col-xs-push-0">
+                        <h3 class="title">Journal your thoughts and get a reality check later</h3>
+                        <div class="desc">
+                            <p>This feature allows you to journal your thoughts about an event in future. And then lets you journal again when the time for the event is over so you can compare. For example, you are worried about presenting your pitch to investors on 10th Nov. You go online and write in as much detail about your worrying thoughts for that day. Then you go and actually give your pitch on the destined day and write about how it actually went. Finally, you see both your thoughts side by side. The imagined ones and the real ones.</p>
+                        </div>
+
+                        <div class="quote">
+                            <div class="quote-profile">
+                                <img class="img-responsive img-circle" src="/static/assets/images/people/profile-s-2.png" alt="" />
+                            </div><!--//profile-->
+                            <div class="quote-content">
+                                <blockquote><p>I find the app very useful for my public speaking skills. </p></blockquote>
+                                <p class="source">@JackT, San Francisco</p>
+                            </div><!--//quote-content-->
+                        </div><!--//quote-->
+                    </div><!--//content-->
+                    <figure class="figure col-md-7 col-sm-12 col-xs-12 col-md-pull-4 col-sm-pull-0 col-xs-pull-0">
+                        <img class="img-responsive" src="/static/assets/images/figures/thoughts2.png" alt="" />
+                        <!--figcaption class="figure-caption">(Screenshot: Coral - App &amp; website startup kit) </figcaption-->
+                    </figure>
+                </div><!--//item-->
+
+
+
+            </div><!--//container-->
+        </section><!--//why-->
+
+
+    </div><!--//section-wrapper-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+
+                <div class="row has-divider">
+                    <div class="footer-col download col-md-6 col-sm-12 col-xs-12">
+                        <div class="footer-col-inner">
+                            <h3 class="title">Mobile apps</h3>
+                            <ul class="list-unstyled download-list">
+                                <li><a class="btn btn-ghost" href="#"><i class="fa fa-apple"></i><span class="text">iOS coming soon...</span> </a></li>
+                                <li><a class="btn btn-ghost" href="#"><i class="fa fa-android"></i><span class="text">Android coming soon...</span></a></li>
+                            </ul>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//download-->
+                    <div class="footer-col contact col-md-6 col-sm-12 col-xs-12">
+                        <div class="footer-col-inner">
+                            <h3 class="title">Contact us</h3>
+                            <p class="adr clearfix">
+                                <i class="fa fa-map-marker pull-left"></i>
+                                <span class="adr-group pull-left">
+                                    <span class="street-address">College Green</span><br>
+                                    <span class="region">56 College Green Road</span><br>
+                                    <span class="postal-code">BS1 XR18</span><br>
+                                    <span class="country-name">UK</span>
+                                </span>
+                            </p>
+                            <p class="tel"><i class="fa fa-phone"></i>0800 123 4567</p>
+                            <p class="email"><i class="fa fa-envelope-o"></i><a href="#">support@satiapp.com</a></p>
+                            <a href="#" class="twitter-follow-button" data-show-count="false">Follow @SatiTweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//contact-->
+                </div>
+            </div><!--//container-->
+        </div><!--//footer-content-->
+        <div class="bottom-bar">
+            <div class="container">
+                <small class="copyright">Copyright@2015</small>
+            </div><!--//container-->
+        </div><!--//bottom-bar-->
+    </footer><!--//footer-->
+
+    <!-- Video Modal -->
+    <div class="modal modal-video" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="videoModalLabel" class="modal-title sr-only">Video Tour</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <iframe id="vimeo-video" src="//player.vimeo.com/video/28872840?color=ffffff&amp;wmode=transparent" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div><!--//video-container-->
+                </div><!--//modal-body-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+    </div><!--//modal-->
+
+    <!-- *****CONFIGURE STYLE****** -->
+    {% if userid %}
+    <div class="config-wrapper">
+        <div class="config-wrapper-inner">
+            <a id="config-trigger" class="config-trigger" href="users/{{userid}}/dashboard"><i class="fa fa-cog"></i></a>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="/static/assets/plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/FitVids/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/static/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="/static/assets/js/main.js"></script>
+
+    <!-- Vimeo video API -->
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script type="text/javascript" src="/static/assets/js/vimeo.js"></script>
+
+</body>
+</html>
+

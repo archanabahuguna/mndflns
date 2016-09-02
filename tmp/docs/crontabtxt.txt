@@ -1,0 +1,1 @@
+28 23 * * * /home/vagrant/linuxsrc/projects/flask/fearapp/app/twl.sh 2>&1 >>/home/vagrant/linuxsrc/projects/flask/fearapp/app/cronab.log

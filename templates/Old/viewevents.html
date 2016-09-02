@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1> Welcome to your page {{username}}</h1>
+    <br>  </br>
+    <p> This page contains info about your account. You can visit info about previous events or create new events here.</p>
+    <br>  </br>
+    <a href="/users/{{userid}}/events">View or update Previous Events</a>
+    <a href="/users/{{userid}}/graphresultsummary">Graphical Result Summary of previous Events</a>
+    <a href="/users/{{userid}}/pages/{{userid}}/txteventsresultsummary">Text Result Summary of previous Events</a>
+    <a href="/users/{{userid}}/events">Create new event</a>
+    
+    <br> </br>
+
+</body>
+</html>

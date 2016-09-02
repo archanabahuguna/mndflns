@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1> Welcome to your event page {{username }}</h1>
+    <br>  </br>
+    <p> Here is a result summary of the event- {{event.title}}.</p>
+    <br>  </br>
+    <table style="width:100%">
+       <tr>
+          <th>Title</th>
+          <th>Imagined desc before event</th> 
+          <th>Real desc after event</th>
+          <th>Fear rating before event</th> 
+          <th>Fear rating after event</th>
+      </tr>
+      <tr>
+          <td>{{event.title}}</td>
+          <td>{{event.preeventtxt}}</td>
+          <td>{{event.posteventtxt}}</td>
+          <td>{{event.prefearfactor}}</td>
+          <td>{{event.postfearfactor}}</td>  
+      </tr>
+    </table>
+    <br> </br>
+    
+</body>
+</html>
